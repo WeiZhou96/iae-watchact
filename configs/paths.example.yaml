@@ -1,5 +1,5 @@
-# Copy to paths.yaml or set the equivalent environment variables.
-data_root: ./data
-out_root: ./data/v2
-watchact_root: ./data/external/WatchAct
-model_root: ./models
+# Copy to configs/paths.yaml, or set the environment variables IAE_DATA_ROOT, IAE_OUT_ROOT, IAE_WATCHACT_ROOT.
+# Relative paths are resolved against the repository root.
+data_root: ./data                          # data_full/WatchAct (dataset), manifests/, models/
+out_root: ./data/v2                        # pipeline outputs: frames10/, tracks/, hands/, feat_cache_*/, runs/
+watchact_root: ./data/external/WatchAct    # official WatchAct code (simulator and scorer)

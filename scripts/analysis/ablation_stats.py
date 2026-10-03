@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Per-activity paired statistics of each ablation against the final model (seed-averaged per request).
 
 For every run prefix (seeds 0-2): score all 455 NC/RD requests (missing = failure), average success and strict

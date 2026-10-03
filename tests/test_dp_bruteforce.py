@@ -1,8 +1,4 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
-"""Exhaustive check of the grammar-constrained DP (iev.decode._dp) against brute-force enumeration.
+"""Exhaustive check of the grammar-constrained DP (iae.decode._dp) against brute-force enumeration.
 
 Random event sequences (up to 12 events, 1-4 objects, 1-4 destinations, random roles/times/scores) are
 generated; every subsequence is enumerated, parsed with the grammar (O+ D)+ (distinct objects, at most

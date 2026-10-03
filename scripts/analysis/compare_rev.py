@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Seed-averaged metrics of run prefixes and activity-level paired statistics against a reference prefix.
 Usage: compare_rev.py <ref_prefix> <prefix> [<prefix> ...] [--out file.json]
 Requests missing from a run count as failures (NC-only runs are compared on NC only)."""

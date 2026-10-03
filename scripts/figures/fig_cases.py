@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Qualitative cases from real WatchAct videos and real IAE / VLM outputs.
 
-Input: figs_src/data/iae_cases (exported by export_cases.py on the server; selection rule and seed are
-recorded there). Frames are shown with the tracked instance masks, hand landmarks and forearm lines that
+Input: data/iae_cases (exported by scripts/figures/export_cases.py from the pipeline outputs; selection rule and
+seed are recorded there; the frames are WatchAct images and are not distributed with this repository). Frames are shown with the tracked instance masks, hand landmarks and forearm lines that
 IAE actually computed at those frames; curves are the frame logits of the three-seed ensemble.
 Processing: every frame is cropped to rows 0-600 of 720 (floor removed), identically for all cases.
 Output: figs/fig_cases.pdf (+ .png, 300 dpi)
@@ -22,8 +18,11 @@ from stylelib import use_style, save_figure, style_ax  # noqa: E402
 from stylelib.style_base import IEEE_TEXT_WIDTH_IN  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
-CASES = HERE / "data" / "iae_cases"
-OUT = HERE.parent.parent / "figs" / "fig_cases.pdf"
+REPO = HERE.parent.parent
+PRED = REPO / "release" / "predictions"      # released per-request predictions and scores
+FDATA = REPO / "release" / "figure_data"     # released summaries used by the figures
+CASES = REPO / "data" / "iae_cases"
+OUT = REPO / "figs" / "fig_cases.pdf"
 CROP_Y = 600
 PAL = ["#0072B2", "#D55E00", "#009E73", "#CC79A7", "#56B4E9", "#E69F00"]
 GREY = "#BDBDBD"

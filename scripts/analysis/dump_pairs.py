@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Per-request gold and predicted pairs (canonical frame), reference frame, camera and success for NC/RD,
 for IAE (ensemble and single seeds), the hand-crafted variant and all direct baselines."""
 import json, sys

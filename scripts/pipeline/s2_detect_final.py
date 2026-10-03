@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Stage 2: count-constrained open-vocabulary detection on the final frame of every video.
 
 Candidates from one query per public category are pooled; exactly the public count per category

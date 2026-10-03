@@ -1,13 +1,9 @@
 # -*- coding: utf-8 -*-
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
-"""Numbers for the camera/reference table and the paired-comparison table (from data/pairs_all.json).
+"""Numbers for the camera/reference table and the paired-comparison table (from release/predictions/pairs_all.json).
 
 Paired comparison: per-activity mean difference of IAE (ensemble) minus a baseline over the 455 NC/RD requests;
 95% interval from 5,000 activity-cluster bootstrap resamples; two-sided sign test over activities with a
-non-zero difference. Writes data/tables_extra.json and prints LaTeX-ready rows.
+non-zero difference. Writes release/figure_data/tables_extra.json and prints LaTeX-ready rows.
 """
 import collections
 import json
@@ -18,7 +14,10 @@ from pathlib import Path
 import numpy as np
 
 HERE = Path(__file__).resolve().parent
-D = json.loads((HERE / "data" / "pairs_all.json").read_text())
+REPO = HERE.parent.parent
+PRED = REPO / "release" / "predictions"      # released per-request predictions and scores
+FDATA = REPO / "release" / "figure_data"     # released summaries used by the figures
+D = json.loads((PRED / "pairs_all.json").read_text())
 R = {r["uid"]: r for r in D["requests"]}
 M = D["methods"]
 out = {}
@@ -61,4 +60,4 @@ for b in ("d8", "d32", "d8o", "d32o", "dvl", "handcrafted", "s32t", "s32f", "s32
     pc[b] = {"SR": paired("iae_ens", b, "succ"), "strict": paired("iae_ens", b, "strict")}
     print(b, pc[b])
 out["paired"] = pc
-(HERE / "data" / "tables_extra.json").write_text(json.dumps(out, indent=1))
+(FDATA / "tables_extra.json").write_text(json.dumps(out, indent=1))

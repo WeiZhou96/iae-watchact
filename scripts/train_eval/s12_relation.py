@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Same-supervision relation baseline for nonverbal cues (NC): direct object-destination pair classification.
 
 Same inputs, folds and supervision as the evidence network: the 28-d hand-candidate features of the

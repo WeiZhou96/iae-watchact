@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Oracle diagnostics for NC programmes (analysis only; goals are never used in training or model selection).
 
 On the averaged held-out frame logits of an ensemble run, decode NC programmes (i) as usual, (ii) with the gold

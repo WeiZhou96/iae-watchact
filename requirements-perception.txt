@@ -1,3 +1,0 @@
--r requirements-main.txt
-# Install the Grounding DINO, SAM 2.1 and pose packages from their official releases.
-mediapipe

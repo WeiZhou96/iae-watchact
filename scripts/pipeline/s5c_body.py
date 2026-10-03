@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Stage 5c: COCO-17 body keypoints (RTMPose-m, CPU via rtmlib) inside the person box of every 10-fps frame.
 
 Output body/<vk>.json: per frame {i, kp: 17x[x,y], sc: 17 scores} or null when no person.

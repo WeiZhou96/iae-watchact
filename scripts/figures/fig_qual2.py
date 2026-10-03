@@ -1,11 +1,8 @@
 # -*- coding: utf-8 -*-
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Episodic examples and registration/identity tracking from real WatchAct videos and real IAE outputs.
 
-Input: figs_src/data/qual2 (export_qual2.py on the server; selection rules and seed recorded there).
+Input: data/qual2 (exported by scripts/figures/export_qual2.py from the pipeline outputs; selection rules and seed
+recorded there; the frames are WatchAct images and are not distributed with this repository).
 (a,b) Episodic requests: first and last frames with the tracked instance masks and public identifiers at those
 frames; arrows on the anchor frame show the container destinations of the program; text gives goal, IAE, 32B.
 (c) One RD activity: last frames of the three cameras with the registered identifiers; registered ground points
@@ -25,8 +22,11 @@ from stylelib import use_style, save_figure, style_ax  # noqa: E402
 from stylelib.style_base import IEEE_TEXT_WIDTH_IN  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
-Q = HERE / "data" / "qual2"
-OUT = HERE.parent.parent / "figs" / "fig_qual2.pdf"
+REPO = HERE.parent.parent
+PRED = REPO / "release" / "predictions"      # released per-request predictions and scores
+FDATA = REPO / "release" / "figure_data"     # released summaries used by the figures
+Q = REPO / "data" / "qual2"
+OUT = REPO / "figs" / "fig_qual2.pdf"
 M = json.loads((Q / "qual2.json").read_text())
 CROP_Y = 600
 PAL = ["#0072B2", "#D55E00", "#009E73", "#CC79A7", "#56B4E9", "#E69F00"]
@@ -146,8 +146,8 @@ for i, v in enumerate(("front", "side", "oblique")):
     e = B["views"][v]
     ax = fig.add_axes(box(0.02 + i * (TW + 0.025), yB + 0.02, TW, TH))
     draw_frame(ax, bdir, e["frame"], e["labels"], bcol, "%s, end (anchor)" % v, label_size=4.0)
-# outcomes of all requests on this activity (from the per-request results used for Table I)
-PA = json.loads((HERE / "data" / "pairs_all.json").read_text())
+# outcomes of all requests on this activity (from the per-request results used for Table 1)
+PA = json.loads((PRED / "pairs_all.json").read_text())
 reqs = [r for r in PA["requests"] if r["activity"] == B["activity"]]
 n_i = sum(PA["methods"]["iae_ens"][r["uid"]]["succ"] for r in reqs)
 n_d = sum(PA["methods"]["d32"][r["uid"]]["succ"] for r in reqs)

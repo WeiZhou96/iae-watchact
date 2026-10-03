@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Nested selection of the decoding cost lambda (NC), without access to the outer test folds.
 
 For each outer fold of the main run (same activity folds as s8_cv), the outer training activities are split into

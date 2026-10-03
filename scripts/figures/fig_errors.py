@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Where plans fail: gold-pair outcomes, extra objects and destination-error types (real per-request results).
 
-Input: figs_src/data/pairs_all.json (dump_pairs.py; canonical-frame gold and predicted pairs for 455 NC/RD requests).
+Input: release/predictions/pairs_all.json (scripts/analysis/export_release.py; canonical-frame gold and predicted pairs for 455 NC/RD requests).
 Output: figs/fig_errors.pdf (+ .png, 300 dpi)
 """
 import collections
@@ -20,8 +16,11 @@ from stylelib import use_style, save_figure, style_ax, panel_tag  # noqa: E402
 from stylelib.style_base import IEEE_TEXT_WIDTH_IN  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
-D = json.loads((HERE / "data" / "pairs_all.json").read_text())
-OUT = HERE.parent.parent / "figs" / "fig_errors.pdf"
+REPO = HERE.parent.parent
+PRED = REPO / "release" / "predictions"      # released per-request predictions and scores
+FDATA = REPO / "release" / "figure_data"     # released summaries used by the figures
+D = json.loads((PRED / "pairs_all.json").read_text())
+OUT = REPO / "figs" / "fig_errors.pdf"
 R = {r["uid"]: r for r in D["requests"]}
 METHODS = [("d8", "8B direct"), ("d32", "32B direct"), ("d8o", "8B + overlays"), ("d32o", "32B + overlays"),
            ("dvl", "InternVL3.5-8B direct"), ("handcrafted", "Hand-crafted evid."), ("iae_ens", "IAE (ensemble)")]

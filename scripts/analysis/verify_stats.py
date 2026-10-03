@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Correct destinations (request level, NC) and NC SR/strict for a run and its VLM-verified variants.
 Usage: verify_stats.py <src_run> <verified_run> ..."""
 import json, sys

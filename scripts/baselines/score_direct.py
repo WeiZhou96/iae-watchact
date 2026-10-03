@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Score direct-baseline predictions for all NC/RD requests (missing/corrupt count as failures)."""
 import collections, json, sys
 from pathlib import Path

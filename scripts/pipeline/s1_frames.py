@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Stage 1: decode every NC/RD video at 10 fps to 1280-px JPEGs (sequential decode, parallel across videos).
 
 index.json records native fps, native frame count, and the native frame index of every saved frame.

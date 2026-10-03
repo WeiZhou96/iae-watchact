@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Stage 5b: MediaPipe hand landmarks on person crops (hand_mediapipe env, CPU, multiprocess).
 
 Output hands/<vk>.json: per frame list of hands {handed, score, kp: 21x[x,y] in 1280-px frame coordinates}.

@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Matched-sampling control with the full perception pipeline: SAM2 propagation on N uniformly sampled frames only.
 
 Same anchor-frame boxes and identities (stage 2/3), same SAM2 model and settings as stage 4, but the video given to

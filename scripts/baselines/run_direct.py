@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Direct VLM baseline (D1 contract) for all NC/RD requests, in each request's own spatial frame.
 
 32 uniformly sampled 10-fps frames (last frame included), max side 896. The public scene is remapped to the
@@ -57,7 +53,7 @@ def draw_overlay(im, vk, i):
 def main():
     ap = argparse.ArgumentParser(); ap.add_argument('--model', required=True); ap.add_argument('--out', type=Path, required=True)
     ap.add_argument('--shard', type=int, default=0); ap.add_argument('--nshards', type=int, default=1); ap.add_argument('--frames', type=int, default=32)
-    ap.add_argument('--multi-gpu', action='store_true', help='use iev.vlm (device_map=auto) instead of teb LocalVLM')
+    ap.add_argument('--multi-gpu', action='store_true', help='use iae.vlm (device_map=auto) instead of teb LocalVLM')
     ap.add_argument('--tasks', choices=['implicit', 'episodic'], default='implicit')
     ap.add_argument('--overlay', action='store_true', help='draw registered instance IDs, hand skeletons and forearm lines on frames')
     ap.add_argument('--family', choices=['qwen', 'internvl'], default='qwen')

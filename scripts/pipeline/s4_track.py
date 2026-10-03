@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Stage 4: SAM2 propagation from the final frame backwards; every registered instance keeps its identity.
 
 Per video writes tracks/<vk>.npz with masks at 1/4 resolution (bool, [T, K, h, w]) and tracks/<vk>.json with

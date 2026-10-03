@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Stage 3: register final-frame detections to public IDs for every video; draw a few overlays for inspection."""
 import json, sys
 from pathlib import Path

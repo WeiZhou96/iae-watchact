@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Test-time perturbation of the public layout used for registration.
 
 mode 'noise': Gaussian noise (std sigma, in grid cells) is added to the canonical coordinates of every public object

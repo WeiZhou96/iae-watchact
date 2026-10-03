@@ -1,11 +1,7 @@
 # -*- coding: utf-8 -*-
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Learning curve and sensitivity of IAE (real runs; seeds 0-2; all 455 NC/RD requests, missing = failure).
 
-Input: figs_src/data/sens_summary.json (sens_summary.py). (a)-(c) retrain with seeds 0-2 (mean +- std);
+Input: release/figure_data/sens_summary.json (scripts/analysis/sens_summary.py). (a)-(c) retrain with seeds 0-2 (mean +- std);
 (d) re-decodes the ensemble's frame logits with each test-time cost lambda (no retraining; NC only is affected).
 Output: figs/fig_sensitivity.pdf (+ .png, 300 dpi)
 """
@@ -20,8 +16,11 @@ from stylelib import use_style, save_figure, style_ax, panel_tag  # noqa: E402
 from stylelib.style_base import IEEE_TEXT_WIDTH_IN  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
-S = json.loads((HERE / "data" / "sens_summary.json").read_text())
-OUT = HERE.parent.parent / "figs" / "fig_sensitivity.pdf"
+REPO = HERE.parent.parent
+PRED = REPO / "release" / "predictions"      # released per-request predictions and scores
+FDATA = REPO / "release" / "figure_data"     # released summaries used by the figures
+S = json.loads((FDATA / "sens_summary.json").read_text())
+OUT = REPO / "figs" / "fig_sensitivity.pdf"
 C_ALL, C_NC = "#D55E00", "#0072B2"
 GREY = "#9A9A9A"
 use_style()

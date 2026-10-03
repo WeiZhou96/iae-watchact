@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Per-stage wall-clock timing on single videos (idle GPU), writing nothing to the pipeline outputs.
 Stages in the teb env: final-frame detection, registration, SAM2 tracking, per-frame person detection,
 feature construction, network + decoding. Hand/body keypoints are timed separately in their envs.

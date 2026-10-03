@@ -1,12 +1,8 @@
 # -*- coding: utf-8 -*-
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Selective prediction and activity-level paired gains (real per-request results).
 
-Inputs (figs_src/data):
-  ens_final_rows.json  per-request output of the 3-seed IAE ensemble (conf = decoding/selection margin)
+Inputs (release/predictions):
+  iae_ensemble_rows.json per-request output of the 3-seed IAE ensemble (conf = decoding/selection margin)
   direct_rows.json     per-request scores of the direct VLM baselines (same 455 NC/RD requests)
 Output: figs/fig_selective.pdf (+ .png, 300 dpi)
 """
@@ -21,8 +17,10 @@ from stylelib import use_style, save_figure, ROLE, style_ax, panel_tag  # noqa: 
 from stylelib.style_base import IEEE_TEXT_WIDTH_IN, FONT_STATUS  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
-DATA = HERE.parent.parent / "release" / "figure_data"
-OUT = HERE.parent.parent / "figs" / "fig_selective.pdf"
+REPO = HERE.parent.parent
+PRED = REPO / "release" / "predictions"      # released per-request predictions and scores
+FDATA = REPO / "release" / "figure_data"     # released summaries used by the figures
+OUT = REPO / "figs" / "fig_selective.pdf"
 
 OURS = "#D55E00"
 BLUE = "#0072B2"
@@ -35,8 +33,8 @@ rng = np.random.default_rng(0)
 MIN_K = 10
 
 use_style()
-ours = json.loads((DATA / "ens_final_rows.json").read_text())
-direct = json.loads((DATA / "direct_rows.json").read_text())
+ours = json.loads((PRED / "iae_ensemble_rows.json").read_text())
+direct = json.loads((PRED / "direct_rows.json").read_text())
 d32 = {r["uid"]: r for r in direct["direct_32b"]}
 d8o = {r["uid"]: r for r in direct["direct_8b_overlay"]}
 

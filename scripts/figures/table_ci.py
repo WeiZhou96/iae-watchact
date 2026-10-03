@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
-"""95% activity-cluster bootstrap intervals of overall plan SR and strict success for every Table I method
-(data/pairs_all.json; the single-model row averages the three seeds per request). Writes data/table_ci.json."""
+"""95% activity-cluster bootstrap intervals of overall plan SR and strict success for every Table 1 method
+(release/predictions/pairs_all.json; the single-model row averages the three seeds per request).
+Writes release/figure_data/table_ci.json."""
 import collections
 import json
 import random
@@ -13,7 +10,10 @@ from pathlib import Path
 import numpy as np
 
 HERE = Path(__file__).resolve().parent
-D = json.loads((HERE / "data" / "pairs_all.json").read_text())
+REPO = HERE.parent.parent
+PRED = REPO / "release" / "predictions"      # released per-request predictions and scores
+FDATA = REPO / "release" / "figure_data"     # released summaries used by the figures
+D = json.loads((PRED / "pairs_all.json").read_text())
 R = D["requests"]; M = D["methods"]
 
 
@@ -37,4 +37,4 @@ for name in ("d8", "d32", "d8o", "d32o", "dvl", "s32t", "s32f", "s32t2", "handcr
     v = per_request(name)
     out[name] = {"SR": ci(v, 0), "strict": ci(v, 1)}
     print(name, out[name])
-(HERE / "data" / "table_ci.json").write_text(json.dumps(out, indent=1))
+(FDATA / "table_ci.json").write_text(json.dumps(out, indent=1))

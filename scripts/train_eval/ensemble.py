@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Average held-out frame/video logits of several CV runs (same folds), decode, run RD programs, and score.
 
 Usage: ensemble.py <out_name> <cost> <run1> <run2> ...

@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use this code or the released results, please cite the paper."
+title: "IAE: instance-anchored interaction evidence for behavior-grounded robot planning"
+type: software
+version: 1.1.0
+license: MIT
+repository-code: "https://github.com/WeiZhou96/iae-watchact"
+authors:
+  - family-names: Xiao
+    given-names: Xinliang
+    orcid: "https://orcid.org/0009-0001-9670-0575"
+  - family-names: Yang
+    given-names: Bowen
+    orcid: "https://orcid.org/0009-0008-0229-0060"
+  - family-names: Yang
+    given-names: Li
+    orcid: "https://orcid.org/0000-0002-8152-7642"
+  - family-names: Zhou
+    given-names: Wei
+    orcid: "https://orcid.org/0000-0003-3225-0576"
+preferred-citation:
+  type: article
+  title: "Instance-anchored interaction evidence for behavior-grounded robot planning"
+  authors:
+    - family-names: Xiao
+      given-names: Xinliang
+    - family-names: Yang
+      given-names: Bowen
+    - family-names: Yang
+      given-names: Li
+    - family-names: Zhou
+      given-names: Wei
+  journal: "Robotics and Autonomous Systems"
+  year: 2026
+  notes: "Submitted"

@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Apply VLM destination verification to a decoded run and score (NC re-decoded; RD rows copied).
 Usage: apply_verify.py <src_run> <verify_run>
 """

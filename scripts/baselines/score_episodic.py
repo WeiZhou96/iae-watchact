@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Score direct predictions or an episodic run on Restore / Reversal / Imitation (800 requests; missing = failure),
 with activity-cluster bootstrap CIs and a paired comparison against a reference.
 Usage: score_episodic.py name=spec [...] [--ref spec]   spec: run:<run> | direct:<dir>

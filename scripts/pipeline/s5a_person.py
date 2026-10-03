@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Stage 5a: person box per 10-fps frame (GroundingDINO, batched). Usage: s5a_person.py <shard> <nshards>"""
 import json, sys
 from pathlib import Path

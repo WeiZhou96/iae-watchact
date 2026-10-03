@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Summary of the layout-dependence experiment (all 455 NC/RD requests and 800 episodic requests; missing = failure)."""
 import json, re, sys
 from pathlib import Path

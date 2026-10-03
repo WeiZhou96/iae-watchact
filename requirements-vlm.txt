@@ -1,3 +1,2 @@
 -r requirements-main.txt
-transformers==5.17.0
-accelerate
+kernels==0.16.0

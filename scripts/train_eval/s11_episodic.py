@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Stage 11: episodic programs (Restore / Reversal / Imitation) for all requests, scored with the official scorer."""
 import collections, json, sys
 from pathlib import Path

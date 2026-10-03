@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Structured-evidence VLM baseline: the VLM receives the same instance-anchored evidence that the programs of IAE
 consume and produces the plan itself (it replaces the grammar decoder / symbolic programs).
 

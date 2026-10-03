@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Summaries for the learning curve and sensitivity grid (all 455 NC/RD requests; missing = failure).
 
 Trained settings: seeds 0-2 of each run prefix. Test-time decoding cost lambda: the three final seeds' frame

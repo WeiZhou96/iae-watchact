@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Evidence-guided VLM verification of ambiguous destination slots (NC), goal-free at inference.
 
 For every decoded destination event, destination candidates whose frame logit at that time is within `delta`

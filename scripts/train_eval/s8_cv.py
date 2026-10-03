@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Stage 8: activity-grouped 5-fold CV of the evidence network with MIL and program-level structured losses.
 
 Training uses task goals of training folds only (MIL candidate labels; structured hinge between the best

@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Control for backward anchoring: forward tracking from the first frame, matched to the registered instances at the end.
 
 For every NC/RD video: count-constrained detection on the FIRST frame (same detector, phrases, counts and selection

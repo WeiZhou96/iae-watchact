@@ -3,13 +3,12 @@
 Only public fields are exposed by `requests()`; goals are loaded exclusively by `goals()` for scoring.
 """
 from __future__ import annotations
-import json, re, os
+import json, re
 from pathlib import Path
 from .config import DATA_ROOT, OUT_ROOT, WATCHACT_ROOT, WATCHACT_SCRIPTS, TEB_ROOT
 
 DATA = DATA_ROOT
 OUT = OUT_ROOT
-REPO = Path(os.environ.get('IAE_SOURCE_REPO', '.')).expanduser().resolve()
 TEB_SRC = TEB_ROOT
 TASKS = ('Nonverbal_Cue', 'Reference_Disambiguation')
 EPISODIC = ('Restore_Previous_State', 'Reversal', 'Imitation')  # manipulation-tracking tasks (no learning)

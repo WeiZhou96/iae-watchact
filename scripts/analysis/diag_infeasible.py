@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Why do some NC videos admit no goal-consistent programme? (diagnostics on the averaged held-out logits)
 
 Classes, checked in order: (1) a goal object or destination is not among the candidates (not registered /

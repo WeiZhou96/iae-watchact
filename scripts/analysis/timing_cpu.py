@@ -1,7 +1,3 @@
-import sys as _iae_sys
-if '--help' in _iae_sys.argv:
-    print('Usage: python %s [options]' % __file__)
-    raise SystemExit(0)
 """Time hand (MediaPipe, hand env) or body (RTMPose, rtmlib env) keypoints on one video, single process, no outputs.
 Usage: timing_cpu.py hands|body <video_key>"""
 import json, sys, time

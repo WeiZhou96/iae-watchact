@@ -1,0 +1,32 @@
+{
+ "none": {
+  "SR": 42.6,
+  "strict": 16.9,
+  "videos": 115,
+  "correct": 126,
+  "missed": 46,
+  "wrong_dst": 71,
+  "extra": 92,
+  "gold": 243
+ },
+ "objects": {
+  "SR": 48.7,
+  "strict": 48.7,
+  "videos": 115,
+  "correct": 142,
+  "missed": 6,
+  "wrong_dst": 95,
+  "extra": 0,
+  "gold": 243
+ },
+ "destinations": {
+  "SR": 43.6,
+  "strict": 16.9,
+  "videos": 115,
+  "correct": 133,
+  "missed": 47,
+  "wrong_dst": 63,
+  "extra": 90,
+  "gold": 243
+ }
+}

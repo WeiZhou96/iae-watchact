@@ -1,0 +1,5 @@
+# Copy to paths.yaml or set the equivalent environment variables.
+data_root: ./data
+out_root: ./data/v2
+watchact_root: ./data/external/WatchAct
+model_root: ./models

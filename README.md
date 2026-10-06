@@ -21,6 +21,20 @@ reference disambiguation and, without learning, the episodic tasks.
 On restoration, reversal and imitation (800 requests), IAE reaches 46.4% plan success without task-specific training,
 against 27.0% for Qwen3-VL-32B.
 
+## Demonstration videos
+
+![IAE on a nonverbal-cue request](video/iae_demo_preview.gif)
+
+Four clips follow single requests through the method:
+
+- [`video/V1_nc_success.mp4`](video/V1_nc_success.mp4): nonverbal cue, success;
+- [`video/V2_rd_success.mp4`](video/V2_rd_success.mp4): reference disambiguation among identical boxes, success;
+- [`video/V3_episodic_success.mp4`](video/V3_episodic_success.mp4): imitation, success;
+- [`video/V4_nc_failure.mp4`](video/V4_nc_failure.mp4): nonverbal cue, failure.
+
+[`video/IAE_supplementary_video.mp4`](video/IAE_supplementary_video.mp4) combines them. `video/README.md` describes
+what the overlays show and how the requests were chosen.
+
 ## Contents
 
 | Path | Content |
@@ -35,6 +49,7 @@ against 27.0% for Qwen3-VL-32B.
 | `scripts/reproduce_paper.sh` | Every command behind the reported results, in order |
 | `release/` | Request list, folds, and per-request predictions and scores of every reported method |
 | `tests/` | Exhaustive check of the dynamic program; check of the released numbers |
+| `video/` | Demonstration clips rendered from the pipeline outputs |
 
 ## Check the reported numbers without data
 

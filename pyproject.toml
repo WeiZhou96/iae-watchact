@@ -5,10 +5,10 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "iae-watchact"
 version = "1.1.0"
-description = "Instance-anchored interaction evidence for behavior-grounded robot planning (WatchAct)"
+description = "Instance-anchored interaction evidence: Grounding robot plans in human pointing and handling (WatchAct)"
 readme = "README.md"
 license = {text = "MIT"}
-authors = [{name = "Xinliang Xiao"}, {name = "Bowen Yang"}, {name = "Li Yang"}, {name = "Wei Zhou"}]
+authors = [{name = "Xinliang Xiao"}, {name = "Bowen Yang"}, {name = "Wenjing Zhang"}, {name = "Li Yang"}, {name = "Wei Zhou"}]
 requires-python = ">=3.11"
 dependencies = ["numpy>=2.0", "Pillow>=10.0"]
 

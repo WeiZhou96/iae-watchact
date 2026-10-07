@@ -1,7 +1,7 @@
-# IAE: instance-anchored interaction evidence for behavior-grounded robot planning
+# IAE: instance-anchored interaction evidence for robot planning from human pointing and handling
 
-Code, cross-validation folds and per-request results for the paper *Instance-anchored interaction evidence for
-behavior-grounded robot planning* (X. Xiao, B. Yang, L. Yang, W. Zhou), evaluated on the
+Code, cross-validation folds and per-request results for the paper *Instance-anchored interaction evidence: Grounding robot plans
+in human pointing and handling* (X. Xiao, B. Yang, W. Zhang, L. Yang, W. Zhou), evaluated on the
 [WatchAct](https://github.com/Baiqi-Li/WatchAct) benchmark.
 
 A robot often has to act on what a person has shown rather than said: which of several identical boxes was pointed at,
@@ -165,8 +165,8 @@ registration, and to the listed model versions. The method has not been evaluate
 
 ```bibtex
 @article{xiao2026iae,
-  title   = {Instance-anchored interaction evidence for behavior-grounded robot planning},
-  author  = {Xiao, Xinliang and Yang, Bowen and Yang, Li and Zhou, Wei},
+  title   = {Instance-anchored interaction evidence: Grounding robot plans in human pointing and handling},
+  author  = {Xiao, Xinliang and Yang, Bowen and Zhang, Wenjing and Yang, Li and Zhou, Wei},
   journal = {Robotics and Autonomous Systems},
   note    = {Submitted},
   year    = {2026}

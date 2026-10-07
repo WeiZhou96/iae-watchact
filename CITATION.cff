@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this code or the released results, please cite the paper."
-title: "IAE: instance-anchored interaction evidence for behavior-grounded robot planning"
+title: "IAE: instance-anchored interaction evidence for robot planning from human pointing and handling"
 type: software
 version: 1.1.0
 license: MIT
@@ -12,6 +12,9 @@ authors:
   - family-names: Yang
     given-names: Bowen
     orcid: "https://orcid.org/0009-0008-0229-0060"
+  - family-names: Zhang
+    given-names: Wenjing
+    orcid: "https://orcid.org/0009-0000-4262-0820"
   - family-names: Yang
     given-names: Li
     orcid: "https://orcid.org/0000-0002-8152-7642"
@@ -20,12 +23,14 @@ authors:
     orcid: "https://orcid.org/0000-0003-3225-0576"
 preferred-citation:
   type: article
-  title: "Instance-anchored interaction evidence for behavior-grounded robot planning"
+  title: "Instance-anchored interaction evidence: Grounding robot plans in human pointing and handling"
   authors:
     - family-names: Xiao
       given-names: Xinliang
     - family-names: Yang
       given-names: Bowen
+    - family-names: Zhang
+      given-names: Wenjing
     - family-names: Yang
       given-names: Li
     - family-names: Zhou
